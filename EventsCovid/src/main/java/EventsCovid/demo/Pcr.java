@@ -4,6 +4,8 @@ package EventsCovid.demo;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -17,7 +19,8 @@ import javax.persistence.ManyToOne;
 public class Pcr {
 	
 @Id
-	public String Id;
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public int Id;
 @DateTimeFormat(pattern = "yyyy-MM-dd")
 	public Date extractionDate;
 	public boolean result;
@@ -40,16 +43,15 @@ public Guest guest;
 		super();
 	}
 
-	
 
 
 	//Getters and Setters:		
-	public String getId() {
+	public int getId() {
 		return Id;
 	}
 
 
-	public void setId(String id) {
+	public void  setId(int id) {
 		Id = id;
 	}
 

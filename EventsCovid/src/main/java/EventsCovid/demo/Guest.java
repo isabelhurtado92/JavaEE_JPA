@@ -2,8 +2,12 @@ package EventsCovid.demo;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -15,6 +19,7 @@ import javax.persistence.Table;
 public class Guest {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int id;
 	public String name;
 	public String surname;
@@ -24,7 +29,7 @@ public class Guest {
 
 //Relationship type:
 	@OneToMany (mappedBy = "guest" , cascade = CascadeType.ALL)
-	public ArrayList<Pcr> pcr = new ArrayList<>();
+	public List<Pcr> pcr = new ArrayList<>();
 	
 	
 //Constructor:	
@@ -89,7 +94,7 @@ public class Guest {
 		this.phoneNumber = phoneNumber;
 	}
 	
-	public ArrayList<Pcr> getPcr() {
+	public List<Pcr> getPcr() {
 		return pcr;
 	}
 
