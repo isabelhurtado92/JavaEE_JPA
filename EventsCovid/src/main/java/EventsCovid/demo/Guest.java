@@ -33,6 +33,9 @@ public class Guest {
 	
 	
 //Constructor:	
+	
+	public Guest() {}
+	
 	public Guest(String name, String surname, int age, HashMap<String, Integer> phoneNumber) {
 		super();
 		//this.id = id; not necessary JPA's annotation "@id" has already created it.
@@ -43,9 +46,10 @@ public class Guest {
 	
 	}
 	
-	public Guest(String name, String surname, int age) {
+	public Guest( String name, String surname, int age) {
 		super();
 		//this.id = id; not necessary JPA's annotation "@id" has already created it.
+		//this.id = id;
 		this.name = name;
 		this.name = surname;
 		this.age = age;
@@ -98,9 +102,7 @@ public class Guest {
 		return pcr;
 	}
 
-	public void setPcr(ArrayList<Pcr> pcr) {
-		this.pcr = pcr;
-	}
+	
 	
 	//adding method:
 	

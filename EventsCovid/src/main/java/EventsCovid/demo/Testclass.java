@@ -14,7 +14,7 @@ public class Testclass implements CommandLineRunner{
 	@Autowired
 	public PcrRepository pcrRepository;
 
-	@Override
+
 	public void run(String... args) throws Exception {
 		
 		//let's create and save objects from each class:
@@ -27,9 +27,11 @@ public class Testclass implements CommandLineRunner{
 		guestRepository.save(isa);
 		guestRepository.save(joan);
 		
+		System.out.println(isa);
+		
 		//pcr:
 		
-		SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd");
+		/*SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd");
 			
 		Pcr pcr1 = new Pcr (formater.parse("2019-10-15") , true);
 		Pcr pcr2 = new Pcr (new Date(0), false);
@@ -49,7 +51,7 @@ public class Testclass implements CommandLineRunner{
 		
 		//let's save again our guests with new info:
 		guestRepository.save(isa);
-		guestRepository.save(joan);
+		guestRepository.save(joan);*/
 		
 	}
 	
