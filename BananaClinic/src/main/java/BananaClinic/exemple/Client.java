@@ -29,13 +29,13 @@ public class Client {
 	private List<Procedure> procedure = new ArrayList<>();
 	
 	//Constructor, getters and setters:
-	public Client(String name, String surname, int nationalID, int phoneNumber, List<Procedure> procedure) {
+	public Client(String name, String surname, int nationalID, int phoneNumber) {
 		super();
 		this.name = name;
 		this.surname = surname;
 		this.nationalID = nationalID;
 		this.phoneNumber = phoneNumber;
-		this.procedure = procedure;
+		
 	}
 
 	public Client() {

@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table
 
@@ -19,9 +21,10 @@ public class Procedure {
 @GeneratedValue (strategy = GenerationType.IDENTITY)
 private int id;	
 private String name;
-private Date StartingDate;
-private Date EndDate;
-private boolean Done;
+@DateTimeFormat(pattern = "yyyy-MM-dd")
+private Date startingDate;
+private Date endDate;
+private boolean done;
 
 
 //Relationship type with employee:
@@ -34,83 +37,90 @@ private boolean Done;
 	@JoinColumn (name = "ID_CLIENT")
 	private Client client;
 
+
 	//Constructor, getters and setters:
-public Procedure(String name, Date startingDate, Date endDate, boolean done, Employee employee, Client client) {
+
+public Procedure(String name, Date startingDate, Date endDate, boolean done) {
 	super();
 	this.name = name;
-	StartingDate = startingDate;
-	EndDate = endDate;
-	Done = done;
-	this.employee = employee;
-	this.client = client;
+	this.startingDate = startingDate;
+	this.endDate = endDate;
+	this.done = done;
+
 }
 
-public Procedure() {
-	super();
-}
+	public Procedure() {
+		super();
+	}
 
-public int getId() {
-	return id;
-}
+	public Procedure(String name, boolean done) {
+		super();
+		this.name = name;
+		this.done = done;
+	}
 
-public void setId(int id) {
-	this.id = id;
-}
+	public int getId() {
+		return id;
+	}
 
-public String getName() {
-	return name;
-}
+	public void setId(int id) {
+		this.id = id;
+	}
 
-public void setName(String name) {
-	this.name = name;
-}
+	public String getName() {
+		return name;
+	}
 
-public Date getStartingDate() {
-	return StartingDate;
-}
+	public void setName(String name) {
+		this.name = name;
+	}
 
-public void setStartingDate(Date startingDate) {
-	StartingDate = startingDate;
-}
+	public Date getStartingDate() {
+		return startingDate;
+	}
 
-public Date getEndDate() {
-	return EndDate;
-}
+	public void setStartingDate(Date startingDate) {
+		this.startingDate = startingDate;
+	}
 
-public void setEndDate(Date endDate) {
-	EndDate = endDate;
-}
+	public Date getEndDate() {
+		return endDate;
+	}
 
-public boolean isDone() {
-	return Done;
-}
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
 
-public void setDone(boolean done) {
-	Done = done;
-}
+	public boolean isDone() {
+		return done;
+	}
 
-public Employee getEmployee() {
-	return employee;
-}
+	public void setDone(boolean done) {
+		this.done = done;
+	}
 
-public void setEmployee(Employee employee) {
-	this.employee = employee;
-}
+	public Employee getEmployee() {
+		return employee;
+	}
 
-public Client getClient() {
-	return client;
-}
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
 
-public void setClient(Client client) {
-	this.client = client;
-}
+	public Client getClient() {
+		return client;
+	}
 
-@Override
-public String toString() {
-	return "Procedure [id=" + id + ", name=" + name + ", StartingDate=" + StartingDate + ", EndDate=" + EndDate
-			+ ", Done=" + Done + ", employee=" + employee + ", client=" + client + "]";
-}
+	public void setClient(Client client) {
+		this.client = client;
+	}
+	
 
+	@Override
+	public String toString() {
+		return "Procedure [id=" + id + ", name=" + name + ", startingDate=" + startingDate + ", endDate=" + endDate
+				+ ", done=" + done + ", employee=" + employee + ", client=" + client + "]";
+	}
 
 
 }

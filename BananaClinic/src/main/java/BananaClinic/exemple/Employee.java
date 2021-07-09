@@ -30,18 +30,20 @@ private List<Procedure> procedure = new ArrayList<>();
 
 
 //Constructor, getters and setters:
-public Employee(String name, String surname, int registrationNumber, String expertise, List<Procedure> procedure) {
+public Employee(String name, String surname, int registrationNumber, String expertise) {
 	super();
 	this.name = name;
 	this.surname = surname;
 	this.registrationNumber = registrationNumber;
 	this.expertise = expertise;
-	this.procedure = procedure;
+
 }
 
 public Employee() {
 	super();
 }
+
+
 
 public int getId() {
 	return id;
