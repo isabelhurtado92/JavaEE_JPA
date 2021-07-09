@@ -22,4 +22,13 @@ private Date EndDate;
 private boolean Done;
 
 
+//Relationship type with employee:
+	@ManyToOne
+	
+//Relationship type with client:
+	@ManyToOne
+
+
+
+
 }

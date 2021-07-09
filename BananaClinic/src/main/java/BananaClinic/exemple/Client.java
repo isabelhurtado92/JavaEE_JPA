@@ -17,8 +17,9 @@ public class Client {
 	private String name;
 	private String surname;
 	private int nationalID;
-	
+	private int phoneNumber;
 
-
+	//Relationship type with procedure:
+	@OneToMany
 
 }

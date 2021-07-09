@@ -18,6 +18,10 @@ private String surname;
 private int registrationNumber;
 private String expertise;
 
+//Relationship type with procedure:
+@OneToMany (mappedBy = "employee", cascade = CascadeType.All)
+private List<Procedure> procedure = new ArrayList<>();
+
 
 
 }
