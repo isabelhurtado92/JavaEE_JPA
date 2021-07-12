@@ -1,7 +1,10 @@
-package BananaClinic.exemple;
 
-import org.springframework.data.repository.CrudRepository;
-
-public interface EmployeeRepository extends CrudRepository <Employee, Integer> {
-
-}
+  package BananaClinic.exemple;
+  
+  import org.springframework.data.repository.CrudRepository;
+  
+  public interface EmployeeRepository extends CrudRepository <Employee,
+  Integer> {
+  
+  }
+ 

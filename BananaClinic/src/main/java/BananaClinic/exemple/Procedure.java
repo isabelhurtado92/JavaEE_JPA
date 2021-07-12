@@ -1,3 +1,4 @@
+
 package BananaClinic.exemple;
 
 import java.util.Date;
@@ -13,41 +14,46 @@ import javax.persistence.Table;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
+
 @Table
 
 public class Procedure {
-	
-@Id
-@GeneratedValue (strategy = GenerationType.IDENTITY)
-private int id;	
-private String name;
-@DateTimeFormat(pattern = "yyyy-MM-dd")
-private Date startingDate;
-private Date endDate;
-private boolean done;
 
+	@Id
 
-//Relationship type with employee:
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	private String name;
+
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date startingDate;
+	private Date endDate;
+	private boolean done;
+
+	// Relationship type with employee:
+
 	@ManyToOne
-	@JoinColumn(name = "ID_EMPLOYEE" )
+
+	@JoinColumn(name = "ID_EMPLOYEE")
 	private Employee employee;
-	
-//Relationship type with client:
+
+	// Relationship type with client:
+
 	@ManyToOne
-	@JoinColumn (name = "ID_CLIENT")
+
+	@JoinColumn(name = "ID_CLIENT")
 	private Client client;
 
+	// Constructor, getters and setters:
 
-	//Constructor, getters and setters:
+	public Procedure(String name, Date startingDate, Date endDate, boolean done) {
+		super();
+		this.name = name;
+		this.startingDate = startingDate;
+		this.endDate = endDate;
+		this.done = done;
 
-public Procedure(String name, Date startingDate, Date endDate, boolean done) {
-	super();
-	this.name = name;
-	this.startingDate = startingDate;
-	this.endDate = endDate;
-	this.done = done;
-
-}
+	}
 
 	public Procedure() {
 		super();
@@ -114,13 +120,11 @@ public Procedure(String name, Date startingDate, Date endDate, boolean done) {
 	public void setClient(Client client) {
 		this.client = client;
 	}
-	
 
 	@Override
 	public String toString() {
 		return "Procedure [id=" + id + ", name=" + name + ", startingDate=" + startingDate + ", endDate=" + endDate
 				+ ", done=" + done + ", employee=" + employee + ", client=" + client + "]";
 	}
-
 
 }

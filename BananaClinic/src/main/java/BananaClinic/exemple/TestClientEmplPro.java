@@ -4,18 +4,23 @@ import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class TestClientEmplPro implements CommandLineRunner {
 	
+	
 	@Autowired
-	EmployeeRepository employeeRepository;
+	 EmployeeRepository employeeRepository;
+	
 	
 	@Autowired
 	ClientRepository clientRepository;
 	
-	@Autowired
-	ProcedureRepository procedureRepository;
+	
+	 @Autowired
+	 ProcedureRepository procedureRepository;
+	 
 	
 
 	public void run(String... args) throws Exception {
@@ -29,8 +34,9 @@ public class TestClientEmplPro implements CommandLineRunner {
 		
 		//creating clients:
 		
-		Client anna = new Client ("Anna", "Hurtado", 47899999, 67888888);
+		Client anna = new Client (1,"Anna", "Hurtado", 47899999, 67888888);
 		clientRepository.save(anna);
+		System.out.println(anna);
 
 		
 		//creating procedures
