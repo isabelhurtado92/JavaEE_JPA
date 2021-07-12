@@ -15,7 +15,7 @@ import javax.persistence.OneToMany;
 @Table
 
 public class Client {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -24,31 +24,22 @@ public class Client {
 	private int nationalID;
 	private int phoneNumber;
 
-	//Relationship type with procedure:
+	// Relationship type with procedure:
 	@OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
 	private List<Procedure> procedure = new ArrayList<>();
-	
-	//Constructor, getters and setters:
-	public Client(int id,String name, String surname, int nationalID, int phoneNumber) {
+
+	// Constructor, getters and setters:
+	public Client(String name, String surname, int nationalID, int phoneNumber) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.surname = surname;
 		this.nationalID = nationalID;
 		this.phoneNumber = phoneNumber;
-		
+
 	}
 
 	public Client() {
 		super();
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getName() {
@@ -83,16 +74,18 @@ public class Client {
 		this.phoneNumber = phoneNumber;
 	}
 
-	
-	public List<Procedure> getProcedure() { return procedure; }
-	  
-	  public void setProcedure(List<Procedure> procedure) { this.procedure =
-	  procedure; }
-	  
-	  public void addProcedure(Procedure procedure) {
-	  this.procedure.add(procedure); procedure.setClient(this);
-	 
-	  }
-	 
+	public List<Procedure> getProcedure() {
+		return procedure;
+	}
+
+	public void setProcedure(List<Procedure> procedure) {
+		this.procedure = procedure;
+	}
+
+	public void addProcedure(Procedure procedure) {
+		this.procedure.add(procedure);
+		procedure.setClient(this);
+
+	}
 
 }

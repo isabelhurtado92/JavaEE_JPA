@@ -27,14 +27,13 @@ public class TestClientEmplPro implements CommandLineRunner {
 	
 		
 		//creating employees:
-		
 		Employee isa = new Employee ("Isabel","Hurtado", 0147566, "Dermatology");
 		employeeRepository.save(isa);
 		
 		
 		//creating clients:
 		
-		Client anna = new Client (1,"Anna", "Hurtado", 47899999, 67888888);
+		Client anna = new Client ("Anna", "Hurtado", 47899999, 67888888);
 		clientRepository.save(anna);
 		System.out.println(anna);
 
