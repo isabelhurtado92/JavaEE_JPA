@@ -1,5 +1,6 @@
 package BananaClinic.exemple;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,10 +37,10 @@ public class TestClientEmplPro implements CommandLineRunner {
 		Client anna = new Client ("Anna", "Hurtado", 47899999, 67888888);
 		clientRepository.save(anna);
 		System.out.println(anna);
-
+		SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd"); //to put in restController
 		
 		//creating procedures
-		Procedure AcneRemoval1 = new Procedure ("peeling", null, null, false);
+		Procedure AcneRemoval1 = new Procedure ("peeling", formater.parse("2021-15-09"),  formater.parse("2021-15-09"), false);
 		procedureRepository.save(AcneRemoval1);
 		
 		//Assignin:
