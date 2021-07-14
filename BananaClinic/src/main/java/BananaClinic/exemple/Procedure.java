@@ -20,7 +20,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class Procedure {
 
 	@Id
-
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
@@ -33,14 +32,12 @@ public class Procedure {
 	// Relationship type with employee:
 
 	@ManyToOne
-
 	@JoinColumn(name = "ID_EMPLOYEE")
 	private Employee employee;
 
 	// Relationship type with client:
 
 	@ManyToOne
-
 	@JoinColumn(name = "ID_CLIENT")
 	private Client client;
 
@@ -65,14 +62,7 @@ public class Procedure {
 		this.done = done;
 	}
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
+	
 	public String getName() {
 		return name;
 	}
