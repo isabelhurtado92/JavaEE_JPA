@@ -18,11 +18,14 @@ public class EmployeePhoto {
 	//constructor's not necessary but anyway:
 	
 	
-	public EmployeePhoto(String name, Binary image) {
+
+	public EmployeePhoto(String name, Binary photo) {
 		super();
 		this.name = name;
 		this.photo = photo;
 	}
+
+
 
 
 	public EmployeePhoto() {
