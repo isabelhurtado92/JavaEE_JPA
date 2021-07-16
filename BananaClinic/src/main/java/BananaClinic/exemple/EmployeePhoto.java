@@ -21,7 +21,7 @@ public class EmployeePhoto {
 	public EmployeePhoto(String name, Binary image) {
 		super();
 		this.name = name;
-		this.image = image;
+		this.photo = photo;
 	}
 
 
@@ -54,19 +54,19 @@ public class EmployeePhoto {
 	}
 
 
-	public Binary getImage() {
-		return image;
+	public Binary getPhoto() {
+		return photo;
 	}
 
 
-	public void setImage(Binary image) {
-		this.image = image;
+	public void setPhoto(Binary photo) {
+		this.photo = photo;
 	}
 
 
 	@Override
 	public String toString() {
-		return "EmployeePhoto [name=" + name + ", image=" + image + "]";
+		return "EmployeePhoto [name=" + name + ", photo=" + photo + "]";
 	}
 	
 	
