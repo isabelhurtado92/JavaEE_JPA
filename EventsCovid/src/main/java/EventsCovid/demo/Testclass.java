@@ -6,7 +6,10 @@ import java.text.SimpleDateFormat;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
+
+@Component
 public class Testclass implements CommandLineRunner{
 	
 	@Autowired
@@ -31,7 +34,7 @@ public class Testclass implements CommandLineRunner{
 		
 		//pcr:
 		
-		/*SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd");
 			
 		Pcr pcr1 = new Pcr (formater.parse("2019-10-15") , true);
 		Pcr pcr2 = new Pcr (new Date(0), false);
@@ -51,7 +54,7 @@ public class Testclass implements CommandLineRunner{
 		
 		//let's save again our guests with new info:
 		guestRepository.save(isa);
-		guestRepository.save(joan);*/
+		guestRepository.save(joan);
 		
 	}
 	
