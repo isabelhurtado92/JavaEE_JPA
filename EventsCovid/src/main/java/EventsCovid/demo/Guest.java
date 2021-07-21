@@ -1,7 +1,6 @@
 package EventsCovid.demo;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -24,7 +23,9 @@ public class Guest {
 	public String name;
 	public String surname;
 	public int age;
-	public HashMap<String,Integer> phoneNumber;
+	public String phoneNumber;
+	public String email;
+	public String password;
 	
 
 //Relationship type:
@@ -36,14 +37,15 @@ public class Guest {
 	
 	public Guest() {}
 	
-	public Guest(String name, String surname, int age, HashMap<String, Integer> phoneNumber) {
+	public Guest(String name, String surname, int age, String phoneNumber, String email, String password) {
 		super();
 		//this.id = id; not necessary JPA's annotation "@id" has already created it.
 		this.name = name;
-		this.name = surname;
+		this.surname = surname;
 		this.age = age;
 		this.phoneNumber = phoneNumber;
-	
+		this.email = email;
+		this.password = password;
 	}
 	
 	public Guest( String name, String surname, int age) {
@@ -51,7 +53,7 @@ public class Guest {
 		//this.id = id; not necessary JPA's annotation "@id" has already created it.
 		//this.id = id;
 		this.name = name;
-		this.name = surname;
+		this.surname = surname;
 		this.age = age;
 	}
 	
@@ -90,22 +92,40 @@ public class Guest {
 		this.age = age;
 	}
 
-	public HashMap<String, Integer> getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(HashMap<String, Integer> phoneNumber) {
+	public void setPhoneNumber (String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 	
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public List<Pcr> getPcr() {
 		return pcr;
 	}
+	
+		public String getPassword() {
+		return password;
+	}
 
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	
-	
+
+
 	//adding method:
 	
+
 	public void addPcr(Pcr pcr) {
 		this.pcr.add(pcr);
 		pcr.setGuest(this);
@@ -115,8 +135,8 @@ public class Guest {
 	//ToString:	
 	@Override
 	public String toString() {
-		return "Guest [id=" + id + ", name=" + name + ", age=" + age + ", phoneNumber=" + phoneNumber + ", pcr=" + pcr
-				+ "]";
+		return "Guest [id=" + id + ", name=" + name + ", age=" + age + ", phoneNumber=" + phoneNumber + ", email=" + email +", pcr=" + pcr
+				+ ", password=" + password + "]";
 	}
 	
 }
