@@ -29,7 +29,7 @@ GuestRepository guestRepository;
 		@RequestMapping("/newGuest")
 		public String newGuest() {
 
-			return "signin";
+			return "newguest";
 		}
 		
 		@RequestMapping("/addGuest")
@@ -37,7 +37,7 @@ GuestRepository guestRepository;
 			
 			guestRepository.save(guest);
 			
-			return "mysafespace";
+			return "home";
 		}
 	
 		// READ 

@@ -57,18 +57,20 @@ package EventsCovid.demo;
 			
 		
 
-			//  DELETE
-			@RequestMapping("/deletePcr/{id}")
-			public void deletePcr(@PathVariable int id) {
-
-				Optional<Pcr> guestFound = pcrRepository.findById(id);
-
-				if (pcrFound.isPresent()) {
-
-					pcrRepository.deleteById(id);
-				}
-
-			}
+			/*
+			 * // DELETE
+			 * 
+			 * @RequestMapping("/deletePcr/{id}") public void deletePcr(@PathVariable int
+			 * id) {
+			 * 
+			 * Optional<Pcr> guestFound = pcrRepository.findById(id);
+			 * 
+			 * if (pcrFound.isPresent()) {
+			 * 
+			 * pcrRepository.deleteById(id); }
+			 * 
+			 * }
+			 */
 
 			// UPADATE 
 			@RequestMapping("/updatePcr/{id}")
