@@ -33,8 +33,9 @@
   
   SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd");
   
-  Pcr pcr1 = new Pcr (formater.parse("2019-10-15") , true); Pcr pcr2 = new Pcr
-  (new Date(0), false); Pcr pcr3 = new Pcr ();
+  Pcr pcr1 = new Pcr (formater.parse("2019-10-15") , true, "Doctora2"); 
+  Pcr pcr2 = new Pcr (new Date(0), false, "Doctora2");
+  Pcr pcr3 = new Pcr ();
   
   pcrRepository.save(pcr1); pcrRepository.save(pcr2); pcrRepository.save(pcr3);
   
