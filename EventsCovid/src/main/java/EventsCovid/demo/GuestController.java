@@ -29,7 +29,7 @@ GuestRepository guestRepository;
 		@RequestMapping("/newGuest")
 		public String newGuest() {
 
-			return "signin.html";
+			return "signin";
 		}
 		
 		@RequestMapping("/addGuest")
@@ -58,7 +58,7 @@ GuestRepository guestRepository;
 
 		//  DELETE
 		@RequestMapping("/deleteGuest/{id}")
-		public void deleteEmployee(@PathVariable int id) {
+		public void deleteGuest(@PathVariable int id) {
 
 			Optional<Guest> guestFound = guestRepository.findById(id);
 
