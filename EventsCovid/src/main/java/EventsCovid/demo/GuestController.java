@@ -70,7 +70,7 @@ GuestRepository guestRepository;
 		}
 
 		// UPADATE 
-		@RequestMapping("/updateEmployee/{id}")
+		@RequestMapping("/updateGuest/{id}")
 		public void updateGuest(Guest guest, @PathVariable int id) {
 
 			Optional<Guest> guestFound = guestRepository.findById(id);
